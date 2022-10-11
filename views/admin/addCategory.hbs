@@ -1,0 +1,16 @@
+{{#each error}}
+ <div class="d-flex justify-content-center alert alert-danger">{{text}}</div>
+{{/each}}
+<h3>Add Category :</h3>
+<form action="/admin/category/new" method= "POST">
+  <div class="card">
+    <div class="card-body">
+      <label for="name">Name:</label>
+      <br>
+      <input type="name" name="name" value="{{name}}" required>
+      <br>
+      <button type="submit" class="btn btn-success mt-4"> Add Category </button>
+    </div>
+  </div>
+</form>
+
