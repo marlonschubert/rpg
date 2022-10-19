@@ -13,8 +13,8 @@ const Item = db.define('item', {
   },
 });
 
-Item.belongsTo(Category);
-Item.belongsTo(Rarity);
+Item.belongsTo(Category, { foreingnKey: 'categoryId', allowNull: true });
+Item.belongsTo(Rarity, { foreingnKey: 'rarityId', allowNull: true });
 
 // Item.sync({ force: true });
 
