@@ -1,6 +1,7 @@
 const express = require('express');
 const rarityController = require('../controllers/rarityController');
 const categoryController = require('../controllers/categoryController');
+const itemController = require('../controllers/itemController');
 
 const router = express.Router();
 
@@ -19,5 +20,10 @@ router.post('/category/new', categoryController.categoryCreatePost);
 router.get('/category/edit/:id', categoryController.categoryEditId);
 router.post('/category/edit', categoryController.categoryEdit);
 router.post('/category/del', categoryController.categoryDelete);
+
+// Router Item
+router.get('/item', itemController.itemList);
+router.get('/item/add', itemController.itemCreateGet);
+router.post('/item/new', itemController.itemCreatePost);
 
 module.exports = router;
