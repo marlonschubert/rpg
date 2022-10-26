@@ -73,10 +73,7 @@ exports.categoryEdit = (req, res) => {
 
 exports.categoryDelete = (req, res) => {
   const { checkbox } = req.body;
-  if (!checkbox) {
-    req.flash('error_msg', 'Select an id!');
-    res.redirect('/admin/rarity');
-  }
+
   Category.destroy({ where: { id: checkbox } }).then(() => {
     req.flash('success_msg', 'Category deleted!');
     res.redirect('/admin/category');

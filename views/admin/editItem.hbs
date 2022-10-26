@@ -1,0 +1,35 @@
+<h3>Edit Item :</h3>
+  <div class="card d-flex justify-content-between">
+    <div class="card-body ">
+      <form class="form-control" action="/admin/item/edit" method= "POST">
+          <input type="hidden" name="id" value="{{item.id}}">
+          <label for="name">Name:</label>
+          <br>
+          <div class="col-sm-3">
+            <input class="form-control" type="text" name="name" value="{{item.name}}" required>
+          </div>
+          <label for="price">Price:</label>
+          <input type="hidden" name="price" value="{{item.price}}">
+          <div class="col-sm-3">
+            <input class="form-control" type="text" name="price" value="{{item.price}}" required>
+          </div>
+
+          <label for="col-form-label"> Category:</label>
+        <select class="form-select" name="categoryId" required="true">
+        <option value="" selected>Select Category:</option>
+        {{#each categories}}
+          <option value="{{id}}">{{name}}</option>
+        {{/each}}
+        </select>
+
+        <label for="cal-form-label">Rarity:</label>
+        <select class="form-select" name="rarityId" required="true">
+        <option value="">Select Rarity:</option>
+        {{#each rarities}}
+          <option value="{{id}}">{{name}}</option>
+        {{/each}}
+        </select>
+          <button type="submit" class="btn btn-success mt-4"> Edit </button>
+      </form>
+    </div>
+  </div>

@@ -6,34 +6,30 @@
   <div class="card">
     <div class="card-body">
       <label for="name">Name:</label>
-      <br>
       <input type="name" name="name" value="{{name}}" required="true">
-      <br>
       <label for="price">Price:</label>
-      <br>
       <input type="number" name="price" value="{{price}}" required="true">
-      <br>
-      <label for="category">Select Category:</label>
-      <br>
-        <select class="form-select" id="categoryId" required="true">
+
+
+      <label for="col-form-label"> Category:</label>
+        <select class="form-select" name="categoryId" required="true">
         <option selected>Select Category</option>
         {{#each categories}}
-          <option name="categoryId" value="{{id}}">{{name}}</option>
+          <option value="{{id}}">{{name}}</option>
         {{/each}}
         </select>
-        <br>
-        <label for="rarity">Select Rarity:</label>
-      <br>
-        <select class="form-select" id="rarityId" required="true">
+
+
+
+        <label for="cal-form-label">Rarity:</label>
+        <select class="form-select" name="rarityId" required="true">
         <option selected> Select Rarity</option>
         {{#each rarities}}
           <option value="{{id}}">{{name}}</option>
         {{/each}}
-        <br>
         </select>
 
 
-      <br>
       <button type="submit" class="btn btn-success mt-4"> Add Item </button>
     </div>
   </div>

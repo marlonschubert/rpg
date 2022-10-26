@@ -25,5 +25,8 @@ router.post('/category/del', categoryController.categoryDelete);
 router.get('/item', itemController.itemList);
 router.get('/item/add', itemController.itemCreateGet);
 router.post('/item/new', itemController.itemCreatePost);
+router.get('/item/edit/:id', itemController.itemEditId);
+router.post('/item/edit', itemController.itemEdit);
+router.post('/item/del', itemController.itemDelete);
 
 module.exports = router;
