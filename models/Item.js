@@ -3,7 +3,10 @@ const Category = require('./Category');
 const Rarity = require('./Rarity');
 
 const Item = db.define('item', {
-  name: Sequelize.STRING,
+  name: {
+    type: Sequelize.STRING,
+    unique: true,
+  },
   price: Sequelize.INTEGER,
   categoryId: Sequelize.INTEGER,
   rarityId: Sequelize.INTEGER,

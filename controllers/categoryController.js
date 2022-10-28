@@ -15,12 +15,12 @@ exports.categoryCreateGet = (req, res) => {
 
 exports.categoryCreatePost = (req, res) => {
   const error = [];
-  const { name } = req.body;
+  const { name, description } = req.body;
   if (!name) error.push({ text: 'Name error!' });
   if (name.lenght < 4) error.push({ text: 'very small name!' });
   if (name.startsWith(' ') || name.endsWith(' ')) error.push({ text: 'Category cannot start/end with space !' });
   if (error.length === 0) {
-    Category.create({ name }).then(() => {
+    Category.create({ name, description }).then(() => {
       req.flash('success_msg', 'Category created!');
       res.redirect('/admin/category');
     }).catch((err) => {
@@ -43,7 +43,7 @@ exports.categoryEditId = (req, res) => {
 };
 
 exports.categoryEdit = (req, res) => {
-  const { id, name } = req.body;
+  const { id, name, description } = req.body;
   Category.findOne({ where: { id } }).then((category) => {
     const error = [];
     if (!name) error.push({ text: 'Error!' });
@@ -57,6 +57,7 @@ exports.categoryEdit = (req, res) => {
     } else {
       const newCategory = category;
       newCategory.name = name;
+      newCategory.description = description;
 
       newCategory.save().then(() => {
         req.flash('success_msg', 'Edited!');
