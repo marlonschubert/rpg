@@ -2,13 +2,14 @@
   <div class="card d-flex justify-content-between">
     <div class="card-body ">
       <form class="form-control" action="/admin/rarity/edit" method= "POST">
-          <input type="hidden" name="id" value="{{rarity.id}}">
+          <input type="hidden" name="id" value="{{rarity.id}}" required="true">
           <label for="name">Name:</label>
           <br>
           <div class="col-sm-3">
-            <input class="form-control" type="text" name="name" id="name" value="{{rarity.name}}" required>
+            <input maxlength="15" class="form-control" type="text" name="name" id="name" value="{{rarity.name}}" required="true">
           </div>
           <button type="submit" class="btn btn-success mt-4"> Edit </button>
+           <a href="/admin/rarity"><button type="button" class="btn btn-secondary mt-4">Close</button></a>
       </form>
     </div>
   </div>

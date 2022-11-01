@@ -86,15 +86,16 @@ exports.itemEdit = (req, res) => {
   Item.findOne({ where: { id } }).then((item) => {
     const error = [];
     if (!name) error.push({ text: 'Name Invalid!' });
-    if (name.length < 4) error.push({ text: 'Short name!' });
     if (name.startsWith(' ') || name.endsWith(' ')) error.push({ text: 'Name cannot start/end with space !' });
     if (!price) error.push({ text: 'Price invalid! ' });
+
     if (error === 0) {
       const newItem = item;
       newItem.name = name;
       newItem.price = price;
       newItem.categoryId = categoryId;
       newItem.rarityId = rarityId;
+
       newItem.save().then(() => {
         req.flash('success_msg', 'Edited');
         res.redirect('/admin/item');

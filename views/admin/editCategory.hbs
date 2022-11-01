@@ -6,9 +6,12 @@
           <label for="name">Name:</label>
           <br>
           <div class="col-sm-3">
-            <input class="form-control" type="text" name="name" id="name" value="{{category.name}}" required>
+            <input class="form-control" maxlength="15" type="text" name="name" id="name" value="{{category.name}}" required="true">
           </div>
+          <label for="description">Description:</label>
+      <textarea class="form-control" name="description" id="description" maxlength="60" style="height: 100px">{{category.description}}</textarea>
           <button type="submit" class="btn btn-success mt-4"> Edit </button>
+          <a href="/admin/category"><button type="button" class="btn btn-secondary mt-4">Close</button></a>
       </form>
     </div>
   </div>

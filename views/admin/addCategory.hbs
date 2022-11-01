@@ -7,11 +7,12 @@
     <div class="card-body">
       <label for="name">Name:</label>
       <br>
-      <input type="name" name="name" value="{{name}}" required>
+      <input type="name" maxlength="15" name="name" value="{{name}}" required="true">
       <br>
       <label for="description">Description:</label>
-      <textarea class="form-control" placeholder="Description here" name="description" id="description" style="height: 100px"></textarea>
+      <input type="textarea" class="form-control" placeholder="Description here" name="description" id="description" maxlength="60" value="{{description}}" style="height: 50px">
       <button type="submit" class="btn btn-success mt-4"> Add Category </button>
+      <a href="/admin/category"><button type="button" class="btn btn-secondary mt-4">Close</button></a>
     </div>
   </div>
 </form>

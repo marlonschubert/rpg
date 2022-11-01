@@ -6,14 +6,13 @@
           <label for="name">Name:</label>
           <br>
           <div class="col-sm-3">
-            <input class="form-control" type="text" name="name" value="{{item.name}}" required>
+            <input maxlength="15" class="form-control" type="text" name="name" value="{{item.name}}" required="true">
           </div>
           <label for="price">Price:</label>
           <input type="hidden" name="price" value="{{item.price}}">
           <div class="col-sm-3">
-            <input class="form-control" type="text" name="price" value="{{item.price}}" required>
+            <input class="form-control" type="text" min="1" max="50000" name="price" value="{{item.price}}" required="true">
           </div>
-
           <label for="col-form-label"> Category:</label>
         <select class="form-select" name="categoryId" required="true">
         <option value="" selected>Select Category:</option>
@@ -21,7 +20,6 @@
           <option value="{{id}}">{{name}}</option>
         {{/each}}
         </select>
-
         <label for="cal-form-label">Rarity:</label>
         <select class="form-select" name="rarityId" required="true">
         <option value="">Select Rarity:</option>
@@ -29,7 +27,11 @@
           <option value="{{id}}">{{name}}</option>
         {{/each}}
         </select>
+
           <button type="submit" class="btn btn-success mt-4"> Edit </button>
+          <a href="/admin/item"><button type="button" class="btn btn-secondary mt-4">Close</button></a>
       </form>
+
     </div>
   </div>
+

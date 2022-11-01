@@ -4,6 +4,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const path = require('path');
+const paginate = require('handlebars-paginate');
 const adminRouter = require('./routes/admin');
 
 const app = express();
@@ -14,6 +15,7 @@ const hbs = exphbs.create({
     allowProtoPropertiesByDefault: true,
     allowProtoMethodsByDefault: true,
   },
+  paginate,
 });
 
 // Config

@@ -6,11 +6,9 @@
   <div class="card">
     <div class="card-body">
       <label for="name">Name:</label>
-      <input type="name" name="name" value="{{name}}" required="true">
+      <input type="name" maxlength="15" name="name" value="{{name}}" required="true">
       <label for="price">Price:</label>
-      <input type="number" name="price" value="{{price}}" required="true">
-
-
+      <input type="number" min="1" max="50000" name="price" value="{{price}}" required="true">
       <label for="col-form-label"> Category:</label>
         <select class="form-select" name="categoryId" required="true">
         <option selected>Select Category</option>
@@ -18,9 +16,6 @@
           <option value="{{id}}">{{name}}</option>
         {{/each}}
         </select>
-
-
-
         <label for="cal-form-label">Rarity:</label>
         <select class="form-select" name="rarityId" required="true">
         <option selected> Select Rarity</option>
@@ -28,9 +23,8 @@
           <option value="{{id}}">{{name}}</option>
         {{/each}}
         </select>
-
-
       <button type="submit" class="btn btn-success mt-4"> Add Item </button>
+      <a href="/admin/item"><button type="button" class="btn btn-secondary mt-4">Close</button></a>
     </div>
   </div>
 </form>

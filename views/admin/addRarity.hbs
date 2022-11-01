@@ -7,9 +7,10 @@
     <div class="card-body">
       <label for="name">Name:</label>
       <br>
-      <input type="name" name="name" value="{{name}}" required>
+      <input type="name" maxlength="15" name="name" value="{{name}}" required="true">
       <br>
       <button type="submit" class="btn btn-success mt-4"> Add rarity </button>
+      <a href="/admin/rarity"><button type="button" class="btn btn-secondary mt-4">Close</button></a>
     </div>
   </div>
 </form>

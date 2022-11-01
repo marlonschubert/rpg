@@ -28,7 +28,7 @@ exports.categoryCreatePost = (req, res) => {
       res.redirect('/admin/category');
     });
   } else {
-    res.render('admin/addCategory', { name, error });
+    res.render('admin/addCategory', { name, error, description });
   }
 };
 
